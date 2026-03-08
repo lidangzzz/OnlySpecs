@@ -1,10 +1,10 @@
-# OnlySpecs
+# OnlyFans
 
 A powerful Electron-based desktop application for managing software specifications and implementations with an integrated Monaco Editor, multi-terminal support, and Claude AI-powered code analysis.
 
 ## Overview
 
-OnlySpecs is designed to help developers organize their projects by specification versions and matching implementation versions. It provides a seamless workflow for writing specifications, analyzing codebases, and implementing features with AI assistance.
+OnlyFans is designed to help developers organize their projects by specification versions and matching implementation versions. It provides a seamless workflow for writing specifications, analyzing codebases, and implementing features with AI assistance.
 
 ## Features
 
@@ -40,7 +40,7 @@ OnlySpecs is designed to help developers organize their projects by specificatio
 ## Architecture
 
 ```
-OnlySpecs/
+OnlyFans/
 ├── src/
 │   ├── main/                    # Electron main process
 │   │   ├── index.ts            # Main entry point, window creation
@@ -105,8 +105,8 @@ OnlySpecs/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/OnlySpecs.git
-cd OnlySpecs
+git clone https://github.com/yourusername/OnlyFans.git
+cd OnlyFans
 
 # Install dependencies
 npm install
@@ -144,7 +144,7 @@ npm run publish
 
 ### API Configuration
 
-The application stores configuration in `~/Documents/OnlySpecs/config.json`:
+The application stores configuration in `~/Documents/OnlyFans/config.json`:
 
 ```json
 {
@@ -158,7 +158,7 @@ You can configure these settings through the Settings modal in the application.
 
 ### Editor Storage
 
-Editor content is automatically saved to `~/Documents/OnlySpecs/editors/`:
+Editor content is automatically saved to `~/Documents/OnlyFans/editors/`:
 - Individual editor files: `{id}.json`
 - Metadata (tab order): `metadata.json`
 
@@ -206,7 +206,7 @@ The preload script exposes the following APIs via `window.electronAPI`:
 |--------|-------------|
 | `loadConfig()` | Load application config |
 | `saveConfig(config)` | Save application config |
-| `createProject()` | Create a new OnlySpecs project |
+| `createProject()` | Create a new OnlyFans project |
 
 ### GitHub Operations
 | Method | Description |
@@ -216,9 +216,9 @@ The preload script exposes the following APIs via `window.electronAPI`:
 
 ## Project Workflow
 
-OnlySpecs follows a specification-driven development workflow:
+OnlyFans follows a specification-driven development workflow:
 
-1. **Create a Project** - Use the "New Project" button to create a new OnlySpecs project
+1. **Create a Project** - Use the "New Project" button to create a new OnlyFans project
 2. **Write Specifications** - Create `specs_v0001.md` with detailed requirements
 3. **Analyze Existing Code** - Import a GitHub repo or open a folder to analyze
 4. **Generate Specs from Code** - Use Claude AI to auto-generate specifications

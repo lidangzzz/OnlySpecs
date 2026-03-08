@@ -1,6 +1,6 @@
 # Tests
 
-This directory contains test suites for the OnlySpecs application.
+This directory contains test suites for the OnlyFans application.
 
 ## Claude SDK Tests
 
