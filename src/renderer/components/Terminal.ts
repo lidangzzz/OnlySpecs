@@ -1,6 +1,6 @@
-import { Terminal as XTerminal, ITheme } from 'xterm';
-import { FitAddon } from 'xterm-addon-fit';
-import { WebLinksAddon } from 'xterm-addon-web-links';
+import { Terminal as XTerminal, ITheme } from '@xterm/xterm';
+import { FitAddon } from '@xterm/addon-fit';
+import { WebLinksAddon } from '@xterm/addon-web-links';
 
 interface TerminalLaunchOptions {
   showHeader?: boolean;
