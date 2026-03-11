@@ -15,7 +15,7 @@
     "lint": "eslint --ext .ts,.tsx .",
     "test": "npx tsx tests/claude-sdk.test.ts",
     "test:mock": "npx tsx tests/claude-sdk.test.ts --mock",
-    "postinstall": "electron-rebuild -f -w node-pty"
+    "postinstall": "@electron/rebuild -f -w node-pty"
   },
   "keywords": [
     "electron",
@@ -46,8 +46,8 @@
     "electron-squirrel-startup": "^1.0.1",
     "marked": "^15.0.4",
     "node-pty": "^1.1.0",
-    "xterm": "^5.3.0",
-    "xterm-addon-fit": "^0.8.0",
-    "xterm-addon-web-links": "^0.9.0"
+    "@xterm/xterm": "^5.5.0",
+    "@xterm/addon-fit": "^1.0.0",
+    "@xterm/addon-web-links": "^1.0.0"
   }
 }

@@ -89,17 +89,19 @@ OnlySpecs/
 | Build Tool | Vite 5 |
 | Language | TypeScript 5.5 |
 | Code Editor | Monaco Editor |
-| Terminal | xterm.js + node-pty |
+| Terminal | @xterm/xterm + node-pty |
 | AI Integration | Claude Agent SDK (@anthropic-ai/claude-agent-sdk) |
 | Markdown | marked |
 | Packaging | Electron Forge |
 
 ## Prerequisites
 
-- Node.js 18+ (LTS recommended)
+- Node.js 18-22 (Node.js 18 LTS recommended for best compatibility)
 - npm or yarn
 - Git (for GitHub import feature)
 - Claude CLI (optional, for AI features)
+
+> **Note:** While Node.js 25+ may work, you may encounter issues with the postinstall script. See Troubleshooting for workarounds.
 
 ## Installation
 
@@ -277,6 +279,23 @@ npm run test:mock
 4. **Application won't start**
    - Clear the Vite cache: `rm -rf .vite`
    - Reinstall dependencies: `rm -rf node_modules && npm install`
+
+5. **Installation fails on Node.js 25+**
+   - If you see `ReferenceError: require is not defined in ES module scope`, the postinstall script may have failed
+   - Workaround: Install without postinstall, then rebuild manually:
+     ```bash
+     npm install --ignore-scripts
+     cd node_modules/node-pty
+     npx node-gyp rebuild --runtime=electron --target=30.5.1 --dist-url=https://electronjs.org/headers
+     cd ../electron && node install.js
+     ```
+   - Alternatively, use Node.js 18 LTS for better compatibility
+
+6. **postinstall script fails**
+   - If electron-rebuild fails, you can rebuild native modules manually:
+     ```bash
+     npx @electron/rebuild -f -w node-pty
+     ```
 
 ## Contributing
 
